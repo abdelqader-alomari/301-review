@@ -41,7 +41,6 @@ class FavColors extends React.Component {
             }).catch();
     }
     updateColor = (e) => {
-        e.preventDefault();
         const colorId = this.state.updateObj._id
         const body = {
             title: e.target.title.value,
