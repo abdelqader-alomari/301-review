@@ -14,7 +14,7 @@ class FavColors extends React.Component {
     }
 
     componentDidMount() {
-        const url = `http://localhost:4000/favColors`;
+        const url = `${process.env.REACT_APP_SERVER}/favColors`;
         axios
             .get(url)
             .then(response => {
@@ -31,7 +31,7 @@ class FavColors extends React.Component {
         })
     }
     deleteColor = (id) => {
-        const url = `http://localhost:4000/deleteFav/${id}`
+        const url = `${process.env.REACT_APP_SERVER}/deleteFav/${id}`
         axios
             .delete(url)
             .then(response => {
@@ -47,7 +47,7 @@ class FavColors extends React.Component {
             title: e.target.title.value,
             imageUrl: e.target.imageUrl.value
         }
-        const url = `http://localhost:4000/updateFav/${colorId}`
+        const url = `${process.env.REACT_APP_SERVER}/updateFav/${colorId}`
         axios.
             put(url, body)
             .then(response => {

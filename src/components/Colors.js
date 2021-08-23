@@ -13,7 +13,7 @@ class Colors extends React.Component {
   }
 
   componentDidMount() {
-    const url = `http://localhost:4000/colors`
+    const url = `${process.env.REACT_APP_SERVER}/colors`
     axios.
       get(url)
       .then(outcome => {
@@ -29,7 +29,7 @@ class Colors extends React.Component {
       imageUrl: this.state.colors[index].imageUrl
     }
     console.log(addColor)
-    const url = 'http://localhost:4000/createFav'
+    const url = `${process.env.REACT_APP_SERVER}/createFav`
     axios
       .post(url, addColor)
       .then(res => {
